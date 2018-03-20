@@ -1,0 +1,25 @@
+<h1 align="center">Reviewed Links !</h1>
+
+<% if @links.empty? %>
+    <h1>Oops , No Links to be found ! Would you like to <%= link_to "post some" , new_link_path %> </h1>
+<% else %>    
+<div id="posts">
+    <% @links.each do |link| %>
+    <div class="post">
+        <div class="post_image">
+            <%= link_to thumbnail(link.url) , link %>
+        </div>
+        <div class="post_content">
+            <br/>
+            <div class="title">
+             <%= link_to name(link.url) , link %>
+            <br/>  
+            </div>
+            
+        </div>
+        
+    </div>
+    <% end %>
+</div>
+<% end %>
+

@@ -1,0 +1,81 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+body{
+	
+
+
+        
+}
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#description_head{
+    color: #2d2e30;
+}
+
+.description {
+		margin: 2rem 0;
+		font-size: 16px;
+		line-height: 1.5;
+		color: #969696;
+	}
+	
+.post{
+	display: inline;
+	float: left;
+	padding: 5px;
+}
+#comments {
+	padding-bottom: 4rem;
+	width: 50%;
+	.comment_count {
+		border-bottom: 1px solid #E9E9E9;
+		padding-bottom: .5rem;
+		margin-bottom: 0;
+	}
+	.comment {
+		padding: 2rem 0;
+		border-bottom: 1px solid #E9E9E9;
+		padding-left: 5%;
+		.username {
+			font-size: 1.3rem;
+			color: #333233;
+			margin: 0 0 .5rem 0;
+		}
+		.content {
+			margin: 0;
+			color: #969696;
+		}
+	}
+	.comment_content {
+		margin-top: 2.5rem;
+		textarea {
+			width: 100%;
+			margin: 1rem 0;
+			min-height: 150px;
+			border: 1px solid #E4E4E4;
+			background: #F8F9FA;
+			border-radius: 0.3rem;
+		}
+	}
+}	
+

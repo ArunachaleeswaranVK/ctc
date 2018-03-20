@@ -1,0 +1,7 @@
+<%= form_for([@link , @link.comments.build] ,class:"form-group" )  do |f| %>
+    <%= f.label :content %>
+    <%= f.text_area :content ,class:"form-control" , size: "100*100" %>
+    <br/>
+    <%= f.button :submit , class:"btb btn-primary" %>
+<% end %>    
+    

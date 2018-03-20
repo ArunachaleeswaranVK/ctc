@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-lg-6">
+        <%= embed(@link.url) %><br/>
+       
+    </div>
+    <div class="col-lg-6">
+        <div class="description">
+            <% if @comments.any? %>
+                <h3 id="description_head">Video Description :</h3>
+                <%= simple_format(@starred.content) %>
+            <% end %>  
+        </div>
+    </div>
+</div>
+
+
+
+
+  
+
+<hr>
+<div id="comments"> 
+    <h2 class="comment_count">
+        <i class="fa fa-comments-o"></i>
+        <%= pluralize(@link.comments.count , "Comment") %></h2>
+    <% @comments.each do |comment| %>
+    <div class="comment">
+        <p class="username">
+            <%= comment.user.email %> Says , 
+        </p>
+        <p class="content">
+             <%= comment.content %>
+        </p>
+        
+       
+        <%= link_to like_link_comment_path(@link.id,comment) , method: :put do %>
+        <i class="fa fa-thumbs-o-up"></i>
+        <%= pluralize(comment.get_upvotes.size, " Like") %>
+        <% end %> 
+        <%= link_to dislike_link_comment_path(@link.id,comment) , method: :put do %>
+        <i class="fa fa-thumbs-o-down"></i>
+        <%= pluralize(comment.get_upvotes.size, " Dislike") %>
+        <% end %>
+        <%= link_to [@link , comment] , method: :delete do %>
+        <i class="fa fa-trash"> Delete</i>
+        <% end %>
+    <br/>
+        
+    </div>
+    <% end %>
+<br/>
+    <%= render "comments/form" %>
+</div>
+
+
+
